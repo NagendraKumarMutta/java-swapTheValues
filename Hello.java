@@ -1,28 +1,30 @@
 import java.util.Scanner;
 
-class BinarySearch{
+class BubbleSort{
     public static void main(String args[]){
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int arr[] = new int[n];
-        for(int i=0; i<n; i++){
-            arr[i] = in.nextInt();
-        }
-        int search = in.nextInt();
-        int first = 0;
-        int last = n-1;
-        int middle=(first+last)/2;
+           Scanner in = new Scanner(System.in);
+           System.out.println("How many number you want to sort with BubbleSort Algorithm");
+           int n = in.nextInt();
+           int arr[] = new int[n];
+           int swap = 0;
 
-        while (first<=last) {
-            if(arr[middle] < search){
-                first = middle+1;
-            }else if(arr[middle] == search){
-                System.out.println(search + " found at location "+ (middle+1));
-                break;
-            }else{
-                last = middle-1;
+           System.out.println("Enter "+n+" elements to sort");
+           for(int i=0; i<n; i++){
+             arr[i] = in.nextInt();
+           }
+
+           for(int i=0; i<(n-1);i++ ){
+            for(int j=0; j<(n-i-1); j++){
+                if(arr[j]>arr[j+1]){
+                   swap = arr[j];
+                   arr[j] = arr[j+1];
+                   arr[j+1] = swap;
+                }
             }
-            middle = (first + last)/2;
-        }
+           }
+           System.out.println("Sorting elements are: ");
+           for(int i=0; i<n; i++){
+            System.out.println(arr[i]);
+           }
     }
-    }
+}
