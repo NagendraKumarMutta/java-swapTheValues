@@ -1,11 +1,15 @@
-import java.util.Scanner;
+import java.util.*;
 
-class FahernheitToCelcius{
+class DisplayCureentTimeAndDate{
     public static void main(String args[]){
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter temperature in Fahrenheit");
-        int Temperature = in.nextInt();
-        int celcius = ((Temperature - 32)*5)/9;
-        System.out.println("Temperature in celcius is: "+celcius+"c");
+        GregorianCalendar date = new GregorianCalendar();
+        int day = date.get(Calendar.DAY_OF_MONTH);
+        int month = date.get(Calendar.MONTH);
+        int year = date.get(Calendar.YEAR);
+        int sec = date.get(Calendar.SECOND);
+        int minute = date.get(Calendar.MINUTE);
+        int hour = date.get(Calendar.HOUR);
+        System.out.println(day+"/"+(month+1)+"/"+year);
+        System.out.println(hour+" : "+minute + " : "+ sec);
     }
 }
