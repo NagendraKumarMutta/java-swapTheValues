@@ -1,15 +1,13 @@
-import java.util.*;
-
-class DisplayCureentTimeAndDate{
+class findMinOfTwoNumbers{
     public static void main(String args[]){
-        GregorianCalendar date = new GregorianCalendar();
-        int day = date.get(Calendar.DAY_OF_MONTH);
-        int month = date.get(Calendar.MONTH);
-        int year = date.get(Calendar.YEAR);
-        int sec = date.get(Calendar.SECOND);
-        int minute = date.get(Calendar.MINUTE);
-        int hour = date.get(Calendar.HOUR);
-        System.out.println(day+"/"+(month+1)+"/"+year);
-        System.out.println(hour+" : "+minute + " : "+ sec);
+        int i = Integer.parseInt(args[0]);
+        int j = Integer.parseInt(args[1]);
+        if(i<j){
+            System.out.println("Minimum number of two numbers is "+i);
+        }else if(j<i){
+            System.out.println("Minimum number of two numbers is "+j);
+        }else{
+            System.out.println("Both given numbers are equal");
+        }
     }
 }
